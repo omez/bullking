@@ -1,0 +1,24 @@
+{
+	"name" : "omez/bullking",
+	"description" : "Task management framework",
+	"type" : "library",
+	"authors" : [{
+			"name" : "Alexander Sergeychik",
+			"email" : "alexander.sergeychik@gmail.com",
+			"homepage" : "http://sergeychik.com",
+			"role" : "Developer"
+		}
+	],
+	"license" : [
+		"MIT"
+	],
+	"autoload" : {
+		"psr-0" : {
+			"Bullking" : "src"
+		}
+	},
+	"minimum-stability" : "stable",
+	"support" : {
+		"email" : "alexander.sergeychik@gmail.com"
+	}
+}
