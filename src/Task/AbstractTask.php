@@ -1,9 +1,12 @@
 <?php
 namespace BullKing\Task;
-use \Exception;
 
-class Task {
+abstract class AbstractTask {
 	
+	/**
+	 * Configuration trait
+	 * @var array
+	 */
 	protected $_configuration;
 	
 	/**
@@ -52,5 +55,27 @@ class Task {
 	public function __wakeup() {
 		throw new \RuntimeException('Unable to wakeup with no implementation');
 	}
+	
+	abstract public function _run();
+	
+	/**
+	 * Runs task and returns result
+	 * 
+	 * @return Result
+	 */
+	public function run() {
+		try {
+			$result = $this->_run();
+		} catch (\Exception $e) {
+			$result = new Result(false, ($result instanceof Result ? $result->getData() : $result));
+		}
+		
+		if (!$result instanceof Result) {
+			$result = new Result(true, $result);
+		}
+		
+		return $result;
+	}
+	
 	
 }

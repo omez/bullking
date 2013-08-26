@@ -1,5 +1,5 @@
 <?php
-namespace BullKing\Task;
+namespace BullKing\Task\Feature;
 
 /**
  * Progress managing trait
@@ -9,7 +9,7 @@ namespace BullKing\Task;
  * @todo manage situations when new progress lower than previous
  * @todo set formatting of result
  */
-class ProgressTrait {
+trait ProgressTrait {
 	
 	protected $_progress = 0.0;
 	

@@ -1,3 +1,6 @@
 /.*
 !/.git*
 /incubator
+/composer.*
+!/composer.json
+/vendor
