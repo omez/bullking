@@ -1,6 +1,11 @@
 <?php
 namespace BullKing\Task;
 
+/**
+ * Default abstract task implementation
+ * 
+ * @author Alexander Sergeychik
+ */
 abstract class AbstractTask {
 	
 	/**
@@ -48,14 +53,11 @@ abstract class AbstractTask {
 		return $this;
 	}
 	
-	public function __sleep() {
-		throw new \RuntimeException('Unable to sleep with no implementation');	
-	}
-	
-	public function __wakeup() {
-		throw new \RuntimeException('Unable to wakeup with no implementation');
-	}
-	
+	/**
+	 * Runner function. Should be overriden in subclasses, returns data of result or Result object
+	 * 
+	 * @return mixed
+	 */
 	abstract public function _run();
 	
 	/**
@@ -76,6 +78,5 @@ abstract class AbstractTask {
 		
 		return $result;
 	}
-	
 	
 }
